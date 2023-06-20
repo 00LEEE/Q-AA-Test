@@ -14,6 +14,7 @@ async function testCraniumCafeRegistration() {
       await driver.wait(until.elementLocated(By.name('schoolSearch')), 20000);
       let searchBox = await driver.findElement(By.name('schoolSearch'));
       await searchBox.sendKeys('Cranium Cafe - Test', Key.RETURN);
+      await driver.sleep(1500); 
     } catch (error) {
       console.log("Error in searching for and selecting 'Cranium Cafe - Test':", error);
       throw error;
@@ -22,8 +23,7 @@ async function testCraniumCafeRegistration() {
     console.log('Clicking redirect button...');
     try {
       await driver.wait(until.elementLocated(By.id('integration-redirect-button')), 20000);
-
-      await driver.sleep(2000);
+      await driver.sleep(1500); 
 
       let redirectButton = await driver.findElement(By.id('integration-redirect-button'));
       await redirectButton.click();
@@ -44,6 +44,7 @@ async function testCraniumCafeRegistration() {
       await driver.wait(until.elementLocated(By.id('register-toggle-button')), 10000);
       let registerToggleButton = await driver.findElement(By.id('register-toggle-button'));
       await registerToggleButton.click();
+      await driver.sleep(1500); 
     } catch (error) {
       console.log("Error in clicking 'Guest Registration':", error);
       throw error;
@@ -58,18 +59,22 @@ async function testCraniumCafeRegistration() {
       await driver.wait(until.elementLocated(By.id('fullname-text')), 10000);
       let fullnameInput = await driver.findElement(By.id('fullname-text'));
       await fullnameInput.sendKeys(testFullname);
+      await driver.sleep(1500); 
 
       await driver.wait(until.elementLocated(By.id('email-text')), 10000);
       let emailInput = await driver.findElement(By.id('email-text'));
       await emailInput.sendKeys(testEmail);
+      await driver.sleep(1500); 
 
       await driver.wait(until.elementLocated(By.id('create-password-text')), 10000);
       let passwordInput = await driver.findElement(By.id('create-password-text'));
       await passwordInput.sendKeys(testPassword);
+      await driver.sleep(1500); 
 
       await driver.wait(until.elementLocated(By.id('confirm-password-text')), 10000);
       let confirmPasswordInput = await driver.findElement(By.id('confirm-password-text'));
       await confirmPasswordInput.sendKeys(testPassword);
+      await driver.sleep(1500); 
     } catch (error) {
       console.log("Error in completing registration form:", error);
       throw error;
@@ -80,6 +85,7 @@ async function testCraniumCafeRegistration() {
       await driver.wait(until.elementLocated(By.id('register-button')), 10000);
       let registerButton = await driver.findElement(By.id('register-button'));
       await registerButton.click();
+      await driver.sleep(1500); 
     } catch (error) {
       console.log("Error in clicking the register button:", error);
       throw error;
@@ -90,14 +96,17 @@ async function testCraniumCafeRegistration() {
       await driver.wait(until.elementLocated(By.name('email-login')), 10000);
       let emailLogin = await driver.findElement(By.name('email-login'));
       await emailLogin.sendKeys(testEmail);
+      await driver.sleep(1500); 
 
       await driver.wait(until.elementLocated(By.name('password-login')), 10000);
       let passwordLogin = await driver.findElement(By.name('password-login'));
       await passwordLogin.sendKeys(testPassword);
+      await driver.sleep(1500); 
 
       await driver.wait(until.elementLocated(By.name('login-button')), 10000);
       let loginButton = await driver.findElement(By.name('login-button'));
       await loginButton.click();
+      await driver.sleep(1500); 
     } catch (error) {
       console.log("Error in logging in:", error);
       throw error;
